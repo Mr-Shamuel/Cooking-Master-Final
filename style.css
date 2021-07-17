@@ -1,0 +1,26 @@
+#foodSection {
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    grid-gap: 70px;
+    padding: 10px;
+}
+
+.food {
+    transition: 0.3s ease;
+}
+
+.food:hover {
+    box-shadow: 5px 5px 5px 0.5px rgb(175, 170, 170);
+}
+
+#img-fluids {
+    width: 50%;
+    border-radius: 5%;
+    margin-bottom: 20px;
+    display: block;
+    margin: 0px auto;
+}
+
+.card {
+    background: rgb(252, 249, 249);
+}
