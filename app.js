@@ -5,8 +5,7 @@ const search = () => {
         swal("Please Enter a Name!!!", "");
 
 
-    }
-    if (inputValue === null) {
+    } else if (inputValue === null) {
         errorMsg();
     } else {
         displayresult(inputValue);
@@ -25,6 +24,7 @@ const errorMsg = () => {
 
     swal("Opps!!!", "No Result Found!!!", "error");
     document.getElementById('err').innerHTML = "<h3>No Result found!!</h3>";
+
 
     Spinner();
 
@@ -73,9 +73,13 @@ const display1 = (data) => {
 
 
 
-
         });
+
         Spinner();
+
+
+
+
 
         document.getElementById('err').style.display = 'none';
     }
@@ -105,9 +109,6 @@ const ingredients = element => {
 
 const dispaly2 = data => {
     const ingredient = data.meals;
-
-
-
     const ul = document.getElementById('parentNode2');
     for (let i = 0; i < ingredient.length; i++) {
         const element2 = ingredient[i];
@@ -134,7 +135,7 @@ const dispaly2 = data => {
 
 }
 
-
+// added spinner 
 const Spinner = () => {
     const spin = document.getElementById('loading-spinner');
     spin.classList.toggle('d-none');
