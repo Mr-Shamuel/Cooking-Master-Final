@@ -141,6 +141,7 @@ const Spinner = () => {
     spin.classList.toggle('d-none');
 }
 
+// reload the page 
 const reload = () => {
     location.reload();
     Spinner();
