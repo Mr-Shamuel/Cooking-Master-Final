@@ -26,13 +26,14 @@ const errorMsg = () => {
     swal("Opps!!!", "No Result Found!!!", "error");
     document.getElementById('err').innerHTML = "<h3>No Result found!!</h3>";
 
-
+    Spinner();
 
 }
 
 const displayresult = (inputValue) => {
 
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${inputValue}`
+    Spinner(); //calling spinner;
     fetch(url)
         .then(res => res.json())
         .then(data => display1(data.meals))
@@ -71,7 +72,10 @@ const display1 = (data) => {
 
 
 
+
+
         });
+        Spinner();
 
         document.getElementById('err').style.display = 'none';
     }
@@ -128,4 +132,10 @@ const dispaly2 = data => {
     }
 
 
+}
+
+
+const Spinner = () => {
+    const spin = document.getElementById('loading-spinner');
+    spin.classList.toggle('d-none');
 }
