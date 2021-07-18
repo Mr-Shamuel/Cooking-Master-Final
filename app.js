@@ -140,3 +140,10 @@ const Spinner = () => {
     const spin = document.getElementById('loading-spinner');
     spin.classList.toggle('d-none');
 }
+
+const reload = () => {
+    location.reload();
+    Spinner();
+    return false;
+
+}
