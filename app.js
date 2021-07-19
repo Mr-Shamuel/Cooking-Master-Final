@@ -47,6 +47,8 @@ const displayresult = (inputValue) => {
 
 const display1 = (data) => {
     const foodContainer = document.getElementById('foodSection');
+    foodContainer.innerHTML = ''; //for new search
+
     if (data === null) {
         errorMsg();
     } else {
@@ -110,6 +112,9 @@ const ingredients = element => {
 const dispaly2 = data => {
     const ingredient = data.meals;
     const ul = document.getElementById('parentNode2');
+
+
+
     for (let i = 0; i < ingredient.length; i++) {
         const element2 = ingredient[i];
         console.log(element2);
@@ -130,6 +135,7 @@ const dispaly2 = data => {
 
 `;
         ul.innerHTML = ingDetails;
+
     }
 
 
@@ -148,3 +154,27 @@ const reload = () => {
     return false;
 
 }
+
+// search box enter key
+
+// function searchKeyPress(e) {
+// look for window.event in case event isn't passed in
+//     e = e || window.event;
+//     if (e.keyCode == 13) {
+//         document.getElementById('btnSearch').click();
+//         return false;
+//     }
+//     return true;
+// }
+
+
+
+
+var go = document.getElementById("btnSearch");
+var txt = document.getElementById("input-meal");
+
+txt.addEventListener("keypress", function(event) {
+    // event.preventDefault();
+    if (event.keyCode == 13)
+        go.click();
+});
